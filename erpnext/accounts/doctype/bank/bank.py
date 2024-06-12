@@ -16,16 +16,14 @@ class Bank(Document):
 	from typing import TYPE_CHECKING
 
 	if TYPE_CHECKING:
+		from erpnext.accounts.doctype.bank_transaction_mapping.bank_transaction_mapping import BankTransactionMapping
 		from frappe.types import DF
-
-		from erpnext.accounts.doctype.bank_transaction_mapping.bank_transaction_mapping import (
-			BankTransactionMapping,
-		)
 
 		bank_name: DF.Data
 		bank_transaction_mapping: DF.Table[BankTransactionMapping]
 		plaid_access_token: DF.Data | None
 		swift_number: DF.Data | None
+		universal_branch_code: DF.Data | None
 		website: DF.Data | None
 	# end: auto-generated types
 
