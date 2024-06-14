@@ -101,13 +101,14 @@
    "read_only": 1
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "universal_branch_code",
    "fieldtype": "Data",
    "label": "Universal Branch Code"
   }
  ],
  "links": [],
- "modified": "2024-06-12 13:49:19.007899",
+ "modified": "2024-06-14 15:52:51.445515",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Bank",
