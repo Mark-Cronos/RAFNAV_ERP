@@ -10,34 +10,28 @@
  "engine": "InnoDB",
  "field_order": [
   "details",
+  "company_type",
   "company_name",
-  "abbr",
+  "registration",
+  "vat_id",
   "default_currency",
   "country",
-  "is_group",
-  "default_holiday_list",
+  "company_parent",
   "cb0",
+  "abbr",
   "default_letter_head",
-  "tax_id",
-  "domain",
+  "default_holiday_list",
   "date_of_establishment",
-  "parent_company",
+  "domain",
   "company_info",
   "company_logo",
-  "date_of_incorporation",
   "phone_no",
   "email",
   "company_description",
   "column_break1",
-  "date_of_commencement",
   "fax",
   "website",
   "address_html",
-  "registration_info",
-  "registration_details",
-  "lft",
-  "rgt",
-  "old_parent",
   "accounts_tab",
   "section_break_28",
   "create_chart_of_accounts_based_on",
@@ -87,29 +81,12 @@
   "depreciation_cost_center",
   "capital_work_in_progress_account",
   "asset_received_but_not_billed",
-  "buying_and_selling_tab",
-  "sales_settings",
-  "default_buying_terms",
-  "sales_monthly_history",
-  "monthly_sales_target",
-  "total_monthly_sales",
-  "column_break_goals",
-  "default_selling_terms",
-  "default_warehouse_for_sales_return",
-  "credit_limit",
-  "transactions_annual_history",
-  "stock_tab",
-  "auto_accounting_for_stock_settings",
-  "enable_perpetual_inventory",
-  "enable_provisional_accounting_for_non_stock_items",
-  "default_inventory_account",
-  "stock_adjustment_account",
-  "default_in_transit_warehouse",
-  "column_break_32",
-  "stock_received_but_not_billed",
-  "default_provisional_account",
-  "expenses_included_in_valuation",
-  "dashboard_tab"
+  "dashboard_tab",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_company"
  ],
  "fields": [
   {
@@ -120,7 +97,7 @@
   {
    "fieldname": "company_name",
    "fieldtype": "Data",
-   "label": "Company",
+   "label": "Company Name",
    "oldfieldname": "company_name",
    "oldfieldtype": "Data",
    "reqd": 1,
@@ -136,7 +113,6 @@
    "set_only_once": 1
   },
   {
-   "bold": 1,
    "default": "0",
    "fieldname": "is_group",
    "fieldtype": "Check",
@@ -161,7 +137,6 @@
    "fieldname": "parent_company",
    "fieldtype": "Link",
    "ignore_user_permissions": 1,
-   "in_list_view": 1,
    "label": "Parent Company",
    "options": "Company"
   },
@@ -175,45 +150,6 @@
    "fieldname": "company_description",
    "fieldtype": "Text Editor",
    "label": "Company Description"
-  },
-  {
-   "fieldname": "sales_settings",
-   "fieldtype": "Section Break",
-   "label": "Buying & Selling Settings"
-  },
-  {
-   "fieldname": "sales_monthly_history",
-   "fieldtype": "Small Text",
-   "hidden": 1,
-   "label": "Sales Monthly History",
-   "no_copy": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "transactions_annual_history",
-   "fieldtype": "Code",
-   "hidden": 1,
-   "label": "Transactions Annual History",
-   "no_copy": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "monthly_sales_target",
-   "fieldtype": "Currency",
-   "label": "Monthly Sales Target",
-   "options": "default_currency"
-  },
-  {
-   "fieldname": "column_break_goals",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "total_monthly_sales",
-   "fieldtype": "Currency",
-   "label": "Total Monthly Sales",
-   "no_copy": 1,
-   "options": "default_currency",
-   "read_only": 1
   },
   {
    "fieldname": "default_currency",
@@ -234,12 +170,6 @@
    "fieldtype": "Link",
    "label": "Default Holiday List",
    "options": "Holiday List"
-  },
-  {
-   "fieldname": "default_warehouse_for_sales_return",
-   "fieldtype": "Link",
-   "label": "Default Warehouse for Sales Return",
-   "options": "Warehouse"
   },
   {
    "fieldname": "country",
@@ -270,11 +200,6 @@
    "label": "Existing Company ",
    "no_copy": 1,
    "options": "Company"
-  },
-  {
-   "fieldname": "tax_id",
-   "fieldtype": "Data",
-   "label": "Tax ID"
   },
   {
    "fieldname": "date_of_establishment",
@@ -418,65 +343,10 @@
    "options": "Cost Center"
   },
   {
-   "depends_on": "eval:!doc.__islocal",
-   "fieldname": "credit_limit",
-   "fieldtype": "Currency",
-   "label": "Credit Limit",
-   "oldfieldname": "credit_limit",
-   "oldfieldtype": "Currency",
-   "options": "default_currency"
-  },
-  {
    "fieldname": "payment_terms",
    "fieldtype": "Link",
    "label": "Default Payment Terms Template",
    "options": "Payment Terms Template"
-  },
-  {
-   "depends_on": "eval:!doc.__islocal",
-   "fieldname": "auto_accounting_for_stock_settings",
-   "fieldtype": "Section Break",
-   "label": "Stock Settings"
-  },
-  {
-   "default": "1",
-   "fieldname": "enable_perpetual_inventory",
-   "fieldtype": "Check",
-   "label": "Enable Perpetual Inventory"
-  },
-  {
-   "fieldname": "default_inventory_account",
-   "fieldtype": "Link",
-   "label": "Default Inventory Account",
-   "options": "Account"
-  },
-  {
-   "fieldname": "stock_adjustment_account",
-   "fieldtype": "Link",
-   "ignore_user_permissions": 1,
-   "label": "Stock Adjustment Account",
-   "no_copy": 1,
-   "options": "Account"
-  },
-  {
-   "fieldname": "column_break_32",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "stock_received_but_not_billed",
-   "fieldtype": "Link",
-   "ignore_user_permissions": 1,
-   "label": "Stock Received But Not Billed",
-   "no_copy": 1,
-   "options": "Account"
-  },
-  {
-   "fieldname": "expenses_included_in_valuation",
-   "fieldtype": "Link",
-   "ignore_user_permissions": 1,
-   "label": "Expenses Included In Valuation",
-   "no_copy": 1,
-   "options": "Account"
   },
   {
    "fieldname": "accumulated_depreciation_account",
@@ -552,11 +422,6 @@
    "label": "Address & Contact"
   },
   {
-   "fieldname": "date_of_incorporation",
-   "fieldtype": "Date",
-   "label": "Date of Incorporation"
-  },
-  {
    "fieldname": "address_html",
    "fieldtype": "HTML"
   },
@@ -565,12 +430,6 @@
    "fieldtype": "Column Break",
    "oldfieldtype": "Column Break",
    "width": "50%"
-  },
-  {
-   "depends_on": "eval:doc.date_of_incorporation",
-   "fieldname": "date_of_commencement",
-   "fieldtype": "Date",
-   "label": "Date of Commencement"
   },
   {
    "fieldname": "phone_no",
@@ -604,62 +463,26 @@
    "oldfieldtype": "Data"
   },
   {
-   "fieldname": "registration_info",
-   "fieldtype": "Section Break",
-   "oldfieldtype": "Section Break",
-   "width": "50%"
-  },
-  {
-   "description": "Company registration numbers for your reference. Tax numbers etc.",
-   "fieldname": "registration_details",
-   "fieldtype": "Code",
-   "label": "Registration Details",
-   "oldfieldname": "registration_details",
-   "oldfieldtype": "Code"
-  },
-  {
    "fieldname": "lft",
    "fieldtype": "Int",
    "hidden": 1,
-   "label": "Lft",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
   },
   {
    "fieldname": "rgt",
    "fieldtype": "Int",
    "hidden": 1,
-   "label": "Rgt",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
-   "fieldname": "old_parent",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "old_parent",
-   "print_hide": 1,
+   "label": "Right",
+   "no_copy": 1,
    "read_only": 1
   },
   {
-   "fieldname": "default_selling_terms",
+   "fieldname": "old_parent",
    "fieldtype": "Link",
-   "label": "Default Selling Terms",
-   "options": "Terms and Conditions"
-  },
-  {
-   "fieldname": "default_buying_terms",
-   "fieldtype": "Link",
-   "label": "Default Buying Terms",
-   "options": "Terms and Conditions"
-  },
-  {
-   "fieldname": "default_in_transit_warehouse",
-   "fieldtype": "Link",
-   "label": "Default In-Transit Warehouse",
-   "options": "Warehouse"
+   "label": "Old Parent",
+   "options": "Company"
   },
   {
    "fieldname": "unrealized_profit_loss_account",
@@ -686,20 +509,6 @@
    "fieldname": "section_break_28",
    "fieldtype": "Section Break",
    "label": "Chart of Accounts"
-  },
-  {
-   "default": "0",
-   "fieldname": "enable_provisional_accounting_for_non_stock_items",
-   "fieldtype": "Check",
-   "label": "Enable Provisional Accounting For Non Stock Items"
-  },
-  {
-   "fieldname": "default_provisional_account",
-   "fieldtype": "Link",
-   "ignore_user_permissions": 1,
-   "label": "Default Provisional Account",
-   "no_copy": 1,
-   "options": "Account"
   },
   {
    "fieldname": "advance_payments_section",
@@ -766,16 +575,6 @@
    "label": "Accounts"
   },
   {
-   "fieldname": "buying_and_selling_tab",
-   "fieldtype": "Tab Break",
-   "label": "Buying and Selling"
-  },
-  {
-   "fieldname": "stock_tab",
-   "fieldtype": "Tab Break",
-   "label": "Stock"
-  },
-  {
    "fieldname": "dashboard_tab",
    "fieldtype": "Tab Break",
    "label": "Dashboard",
@@ -788,6 +587,43 @@
    "fieldname": "reconcile_on_advance_payment_date",
    "fieldtype": "Check",
    "label": "Reconcile on Advance Payment Date"
+  },
+  {
+   "fieldname": "registration",
+   "fieldtype": "Data",
+   "label": "Registration"
+  },
+  {
+   "fieldname": "vat_id",
+   "fieldtype": "Data",
+   "label": "VAT No (optional)"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "parent_company",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Parent Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "company_type",
+   "fieldtype": "Select",
+   "label": "Company Type",
+   "options": "Sole Practitioner\nPartnership\nIncorporation\nPrivate Company\nNGO\nNPC\nPublic Company"
+  },
+  {
+   "fieldname": "company_parent",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "in_list_view": 1,
+   "label": "Parent Company",
+   "options": "Company"
   }
  ],
  "icon": "fa fa-building",
@@ -795,7 +631,7 @@
  "image_field": "company_logo",
  "is_tree": 1,
  "links": [],
- "modified": "2024-05-16 12:39:54.694232",
+ "modified": "2024-06-15 19:21:30.136428",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Company",
