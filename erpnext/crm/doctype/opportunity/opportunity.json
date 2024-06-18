@@ -225,7 +225,8 @@
    "fieldname": "items_section",
    "fieldtype": "Tab Break",
    "label": "Items",
-   "options": "fa fa-shopping-cart"
+   "options": "fa fa-shopping-cart",
+   "show_dashboard": 1
   },
   {
    "fieldname": "items",
@@ -551,7 +552,8 @@
    "depends_on": "eval:!doc.__islocal",
    "fieldname": "notes_tab",
    "fieldtype": "Tab Break",
-   "label": "Comments"
+   "label": "Comments",
+   "show_dashboard": 1
   },
   {
    "fieldname": "notes_html",
@@ -622,7 +624,7 @@
  "icon": "fa fa-info-sign",
  "idx": 195,
  "links": [],
- "modified": "2022-10-13 12:42:21.545636",
+ "modified": "2024-06-03 12:35:55.558031",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "Opportunity",
