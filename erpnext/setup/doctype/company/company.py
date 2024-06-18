@@ -39,17 +39,15 @@ class Company(NestedSet):
 		company_description: DF.TextEditor | None
 		company_logo: DF.AttachImage | None
 		company_name: DF.Data
+		company_parent: DF.Link | None
+		company_type: DF.Literal["Sole Practitioner", "Partnership", "Incorporation", "Private Company", "NGO", "NPC", "Public Company"]
 		cost_center: DF.Link | None
 		country: DF.Link
 		create_chart_of_accounts_based_on: DF.Literal["", "Standard Template", "Existing Company"]
-		credit_limit: DF.Currency
-		date_of_commencement: DF.Date | None
 		date_of_establishment: DF.Date | None
-		date_of_incorporation: DF.Date | None
 		default_advance_paid_account: DF.Link | None
 		default_advance_received_account: DF.Link | None
 		default_bank_account: DF.Link | None
-		default_buying_terms: DF.Link | None
 		default_cash_account: DF.Link | None
 		default_currency: DF.Link
 		default_deferred_expense_account: DF.Link | None
@@ -58,48 +56,36 @@ class Company(NestedSet):
 		default_expense_account: DF.Link | None
 		default_finance_book: DF.Link | None
 		default_holiday_list: DF.Link | None
-		default_in_transit_warehouse: DF.Link | None
 		default_income_account: DF.Link | None
-		default_inventory_account: DF.Link | None
 		default_letter_head: DF.Link | None
 		default_payable_account: DF.Link | None
-		default_provisional_account: DF.Link | None
 		default_receivable_account: DF.Link | None
-		default_selling_terms: DF.Link | None
-		default_warehouse_for_sales_return: DF.Link | None
 		depreciation_cost_center: DF.Link | None
 		depreciation_expense_account: DF.Link | None
 		disposal_account: DF.Link | None
 		domain: DF.Data | None
 		email: DF.Data | None
-		enable_perpetual_inventory: DF.Check
-		enable_provisional_accounting_for_non_stock_items: DF.Check
 		exception_budget_approver_role: DF.Link | None
 		exchange_gain_loss_account: DF.Link | None
 		existing_company: DF.Link | None
+		expenses_included_in_asset_valuation: DF.Link | None
 		fax: DF.Data | None
 		is_group: DF.Check
 		lft: DF.Int
-		monthly_sales_target: DF.Currency
-		old_parent: DF.Data | None
+		old_parent: DF.Link | None
 		parent_company: DF.Link | None
 		payment_terms: DF.Link | None
 		phone_no: DF.Data | None
 		reconcile_on_advance_payment_date: DF.Check
-		registration_details: DF.Code | None
+		registration: DF.Data | None
 		rgt: DF.Int
 		round_off_account: DF.Link | None
 		round_off_cost_center: DF.Link | None
-		sales_monthly_history: DF.SmallText | None
 		series_for_depreciation_entry: DF.Data | None
-		stock_adjustment_account: DF.Link | None
-		stock_received_but_not_billed: DF.Link | None
 		submit_err_jv: DF.Check
-		tax_id: DF.Data | None
-		total_monthly_sales: DF.Currency
-		transactions_annual_history: DF.Code | None
 		unrealized_exchange_gain_loss_account: DF.Link | None
 		unrealized_profit_loss_account: DF.Link | None
+		vat_id: DF.Data | None
 		website: DF.Data | None
 		write_off_account: DF.Link | None
 	# end: auto-generated types
