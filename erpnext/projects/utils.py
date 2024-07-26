@@ -10,15 +10,15 @@ import frappe
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs
 def query_task(doctype, txt, searchfield, start, page_len, filters):
-	from frappe.desk.reportview import build_match_conditions
+    from frappe.desk.reportview import build_match_conditions
 
-	search_string = "%%%s%%" % txt
-	order_by_string = "%s%%" % txt
-	match_conditions = build_match_conditions("Task")
-	match_conditions = ("and" + match_conditions) if match_conditions else ""
+    search_string = "%%%s%%" % txt
+    order_by_string = "%s%%" % txt
+    match_conditions = build_match_conditions("Project Task")
+    match_conditions = ("and" + match_conditions) if match_conditions else ""
 
-	return frappe.db.sql(
-		"""select name, subject from `tabTask`
+    return frappe.db.sql(
+        """select name, subject from `tabProject Task`
 		where (`{}` like {} or `subject` like {}) {}
 		order by
 			case when `subject` like {} then 0 else 1 end,
@@ -26,7 +26,23 @@ def query_task(doctype, txt, searchfield, start, page_len, filters):
 			`{}`,
 			subject
 		limit {} offset {}""".format(
-			searchfield, "%s", "%s", match_conditions, "%s", searchfield, "%s", searchfield, "%s", "%s"
-		),
-		(search_string, search_string, order_by_string, order_by_string, page_len, start),
-	)
+            searchfield,
+            "%s",
+            "%s",
+            match_conditions,
+            "%s",
+            searchfield,
+            "%s",
+            searchfield,
+            "%s",
+            "%s",
+        ),
+        (
+            search_string,
+            search_string,
+            order_by_string,
+            order_by_string,
+            page_len,
+            start,
+        ),
+    )

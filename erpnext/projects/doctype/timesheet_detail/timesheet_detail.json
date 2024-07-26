@@ -96,9 +96,9 @@
   },
   {
    "fieldname": "task",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Task",
-   "options": "Task",
+   "options": "Project Task",
    "remember_last_selected_value": 1
   },
   {
@@ -224,7 +224,7 @@
  "idx": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-17 15:21:01.840815",
+ "modified": "2024-07-26 15:11:13.103497",
  "modified_by": "Administrator",
  "module": "Projects",
  "name": "Timesheet Detail",
