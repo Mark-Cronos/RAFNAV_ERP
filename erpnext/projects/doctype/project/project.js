@@ -96,7 +96,7 @@ frappe.ui.form.on("Project", {
 
 			frm.trigger("set_project_status_button");
 
-			if (frappe.model.can_read("Task")) {
+			if (frappe.model.can_read("Project Task")) {
 				frm.add_custom_button(
 					__("Gantt Chart"),
 					function () {
