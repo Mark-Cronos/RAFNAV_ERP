@@ -226,7 +226,7 @@
   }
  ],
  "links": [],
- "modified": "2024-07-31 09:47:26.226392",
+ "modified": "2024-09-02 10:20:53.828983",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Bank Account",
@@ -258,7 +258,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "search_fields": "bank,account",
  "sort_field": "modified",
  "sort_order": "DESC",
