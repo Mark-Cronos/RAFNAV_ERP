@@ -29,6 +29,8 @@ class BankAccount(Document):
 		bank_account_no: DF.Data | None
 		branch_code: DF.Data | None
 		company: DF.Link | None
+		contact: DF.DynamicLink | None
+		contact_type: DF.Link | None
 		disabled: DF.Check
 		iban: DF.Data | None
 		integration_id: DF.Data | None
